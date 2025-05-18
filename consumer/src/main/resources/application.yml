@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: consumer
+  kafka:
+    consumer:
+        bootstrap-servers: localhost:9092
+#        group-id: consumer-group
+#        auto-offset-reset: earliest
+#        properties:
+#            enable.auto.commit: false
+#            max.poll.records: 10
+#        listener:
+#        ack-mode: manual
+#        concurrency: 3
+#        poll-timeout: 3000
+#        template:
+#        default-topic: my-topic
+
+server:
+  port: 8081
