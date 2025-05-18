@@ -12,7 +12,7 @@
 	<artifactId>producer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>producer</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Producer for Live Rider Tracker</description>
 	<url/>
 	<licenses>
 		<license/>

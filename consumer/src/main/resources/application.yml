@@ -3,18 +3,16 @@ spring:
     name: consumer
   kafka:
     consumer:
-        bootstrap-servers: localhost:9092
-#        group-id: consumer-group
-#        auto-offset-reset: earliest
-#        properties:
-#            enable.auto.commit: false
-#            max.poll.records: 10
-#        listener:
-#        ack-mode: manual
-#        concurrency: 3
-#        poll-timeout: 3000
-#        template:
-#        default-topic: my-topic
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      # it catches decentralized error and gives you a chance to handle them more gracefully. So  it basically catches decentralized exceptions and throws to the listener.
+      properties:
+            spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+            spring.json.trusted.packages: '*'
+            spring.json.value.default.type: com.priti.consumer.model.RiderLocation
+            #you are telling consumer to always try to convert incoming json messages to riderLocation class from com.priti.consumer.model package.
+
 
 server:
   port: 8081

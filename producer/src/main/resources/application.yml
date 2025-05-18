@@ -6,6 +6,11 @@ spring:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-#      AS VALUE IS OBJECT WE NEED JSON NOT STRING.
+      # AS VALUE IS OBJECT WE NEED JSON NOT STRING.
+      properties:
+        spring.json.add.type.headers: false
+        # whenever you send object there is something called as type id that is being added in header to tell consumer what java class message it is. So we are setting it to false.
+
+
 
 
