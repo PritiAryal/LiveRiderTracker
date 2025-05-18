@@ -10,7 +10,10 @@ spring:
       properties:
         spring.json.add.type.headers: false
         # whenever you send object there is something called as type id that is being added in header to tell consumer what java class message it is. So we are setting it to false.
-
-
+  cloud:
+    function:
+      definition: uppercase
+        # this is the function name that we are going to expose at following endpoint
+    function.web.path: /uppercase
 
 
