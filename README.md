@@ -363,3 +363,5 @@ This project demonstrates a complete event-driven microservices architecture usi
 - Spring Cloud Function for functional endpoints
 - Multi-topic producers & consumers
 - Consumer group strategies
+
+This project can be extended to support other brokers like **RabbitMQ** by changing the dependencies and configs.
