@@ -1,4 +1,4 @@
-package com.priti.consumer.model;
+package com.priti.producer;
 
 public class RiderLocation {
     private String riderId;

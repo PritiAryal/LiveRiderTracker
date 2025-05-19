@@ -1,6 +1,6 @@
 package com.priti.consumer;
 
-import com.priti.consumer.model.RiderLocation;
+import com.priti.consumer.RiderLocation;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 

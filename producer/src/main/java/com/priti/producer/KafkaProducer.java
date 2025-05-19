@@ -1,6 +1,5 @@
-package com.priti.producer.controller;
+package com.priti.producer;
 
-import com.priti.producer.model.RiderLocation;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 

@@ -12,8 +12,30 @@ spring:
         # whenever you send object there is something called as type id that is being added in header to tell consumer what java class message it is. So we are setting it to false.
   cloud:
     function:
-      definition: uppercase
+      definition: sendRiderLocation;sendRiderStatus
+#      uppercase,
         # this is the function name that we are going to expose at following endpoint
-    function.web.path: /uppercase
+#    function.web.path: /uppercase
+#      web:
+#        path: /uppercase
+    stream:
+      function:
+        definition: sendRiderLocation;sendRiderStatus
+      bindings:
+        sendRiderLocation-out-0:
+#          destination: my-topic
+          destination: my-new-topic-2
+          content-type: application/json
+        sendRiderStatus-out-0:
+          destination: priti-topic
+          content-type: text/plain
+      poller:
+        fixed-delay: 1000
+      #you wish to generate messages every 1 seconds.
+      kafka:
+        binder:
+          brokers: localhost:9092
+
+
 
 

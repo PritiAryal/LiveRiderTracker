@@ -1,6 +1,24 @@
 spring:
   application:
     name: consumer
+  cloud:
+    function:
+      definition: processRiderLocation;processRiderStatus
+    stream:
+      function:
+        definition: processRiderLocation;processRiderStatus
+      bindings:
+        processRiderLocation-in-0:
+          destination: my-new-topic-2
+          content-type: application/json
+          group: rider-location-group
+        processRiderStatus-in-0:
+          destination: priti-topic
+          content-type: text/plain
+          group: rider-status-group
+      kafka:
+        binder:
+          brokers: localhost:9092
   kafka:
     consumer:
       bootstrap-servers: localhost:9092
@@ -8,9 +26,9 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
       # it catches decentralized error and gives you a chance to handle them more gracefully. So  it basically catches decentralized exceptions and throws to the listener.
       properties:
-            spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
-            spring.json.trusted.packages: '*'
-            spring.json.value.default.type: com.priti.consumer.model.RiderLocation
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+        spring.json.trusted.packages: '*'
+        spring.json.value.default.type: com.priti.consumer.RiderLocation
             #you are telling consumer to always try to convert incoming json messages to riderLocation class from com.priti.consumer.model package.
 
 

@@ -1,9 +1,12 @@
-package com.priti.producer.model;
+package com.priti.consumer;
 
 public class RiderLocation {
     private String riderId;
     private double latitude;
     private double longitude;
+
+    public RiderLocation() {
+    }
 
     public RiderLocation(String riderId, double latitude, double longitude) {
         this.riderId = riderId;
