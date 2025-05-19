@@ -9,6 +9,7 @@ spring:
       # AS VALUE IS OBJECT WE NEED JSON NOT STRING.
       properties:
         spring.json.add.type.headers: false
+
         # whenever you send object there is something called as type id that is being added in header to tell consumer what java class message it is. So we are setting it to false.
   cloud:
     function:
@@ -31,7 +32,7 @@ spring:
           content-type: text/plain
       poller:
         fixed-delay: 1000
-      #you wish to generate messages every 1 seconds.
+      #you wish to generate messages every 1 second.
       kafka:
         binder:
           brokers: localhost:9092
