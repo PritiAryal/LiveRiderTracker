@@ -6,6 +6,8 @@ This project demonstrates the integration of **Apache Kafka** with **Spring Boot
 
 ---
 
+## Architecture: [View Architecture Design](https://pritiaryal.github.io/LiveRiderTrackerArchitectureDesign/)
+
 ## Tech Stack
 
 - Java 17+
